@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: go-pod
-        image: "shivangani/my-go-app:latest"
+        image: "shivangani/go-app:{{TAG}}"
         ports:
         - containerPort: 80

@@ -18,6 +18,7 @@ node('k8s-node') {
     
     stage('deploy') {
         git 'https://github.com/shivi-bit/go-repo.git'
+        sh 'sed -i \'s/{{TAG}}/${BUILD_NUMBER}/G\' deployment.yml'
         sh 'kubectl apply -f deployment.yml -n go-namespace'
     }
 }
