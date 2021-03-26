@@ -17,6 +17,7 @@ node('aws-ec2') {
 node('k8s-node') {
     
     stage('deploy') {
+        git 'https://github.com/shivi-bit/go-repo.git'
         sh 'kubectl apply -f deployment.yml -n go-application'
     }
 }
