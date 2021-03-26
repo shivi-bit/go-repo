@@ -4,7 +4,7 @@ node('aws-ec2') {
         git 'https://github.com/shivi-bit/go-repo.git'
     }
 
-    stage('build') 
+    stage('build') {
         sh 'docker build -t shivangani/go-app:${BUILD_NUMBER} .'
     }
 
