@@ -5,11 +5,11 @@ node('aws-ec2') {
     }
 
     stage('build') {
-        sh 'docker build -t shivangani/go-app:${BUILD_NUMBER} .'
+        sh 'sudo docker build -t shivangani/go-app:${BUILD_NUMBER} .'
     }
 
     stage('publish') {
-        sh 'docker push shivangani/go-app:${BUILD_NUMBER}'
+        sh 'sudo docker push shivangani/go-app:${BUILD_NUMBER}'
     }
 
 }
